@@ -1,11 +1,11 @@
 import React, { FC, useMemo } from 'react';
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
-import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
-import { UnsafeBurnerWalletAdapter } from '@solana/wallet-adapter-wallets';
+import { Airdrop } from './components/Airdrop';
 import {
     WalletModalProvider,
     WalletDisconnectButton,
-    WalletMultiButton
+    WalletMultiButton,
+    WalletConnectButton
 } from '@solana/wallet-adapter-react-ui';
 import { clusterApiUrl } from '@solana/web3.js';
 
@@ -16,12 +16,15 @@ import '@solana/wallet-adapter-react-ui/styles.css';
 function App() {
 
   return (
-    <ConnectionProvider endpoint={"https://api.devnet.solana.com"}>
-    <WalletProvider wallets={wallets} autoConnect>
+    <ConnectionProvider endpoint={"https://solana-devnet.g.alchemy.com/v2/nddfDr3rXrtWsgsjtnzAjroHyvsQHUE4"}>
+    <WalletProvider wallets={[]} autoConnect>
         <WalletModalProvider>
-            <WalletMultiButton />
-            <WalletDisconnectButton />
-            { /* Your app's components go here, nested within the context providers. */ }
+          <WalletMultiButton/>
+          <WalletDisconnectButton/>
+            <div>
+              hi 
+            </div>
+            <Airdrop />
         </WalletModalProvider>
     </WalletProvider>
 </ConnectionProvider>
