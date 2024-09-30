@@ -58,5 +58,6 @@ Example usage in your app:
 
 ### <WalletMultiButton>:
  This component shows a button that allows users to connect to a wallet. It displays the wallet's name and balance after the wallet is connected.
+ 
 ### <WalletDisconnectButton>: 
 Displays a button that allows users to disconnect their wallet. After the wallet is connected, this button becomes active for the user to disconnect.
